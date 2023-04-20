@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Đếm ngược</title>
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+    <div id="countdown"></div>
+  </body>
+
+<script>
+const countdownElement = document.getElementById('countdown');
+const countdownDate = new Date('April 30, 2023 00:00:00').getTime();
+
+const countdown = setInterval(() => {
+  const now = new Date().getTime();
+  const distance = countdownDate - now;
+  const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+  const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+  const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+  const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+  countdownElement.innerHTML = `${days} ngày ${hours} giờ ${minutes} phút ${seconds} giây`;
+
+  if (distance < 0) {
+    clearInterval(countdown);
+    window.location.href = "cybersoft_happy_birthday.html";
+  }
+}, 1000);
+
+
+
+</script>
+<audio src="Happy Birthday to You (Always 14) - AMEE x Hoàng Dũng x Obito x Hứa Kim Tuyền - OFFICIAL LYRIC VIDEO.mp3" autoplay="true" loop="true"></audio>
+
+
+</html>
